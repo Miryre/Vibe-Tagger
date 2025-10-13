@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Tagger -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--Main Container-->
+    <div class="container">
+ <!--Header Section-->       
+    <header class="header">
+        <h1>Welcome to Vibe Tagger</h1>
+        <p class="subtitle">Your go to app for trending social media tags</p>
+        <br>
+        <img src="https://picsum.photos/200" alt='A random image as a place holder' class="hero-image">
+    </header>
+ <!--Input Section-->       
+    <section class="input-section">
+        <div class="input-group">
+            <label for="nicheInput">Enter Your Niche:</label>
+            <input
+                type="text"
+                id="nicheInput"
+                placeholder="eg., fitness, cooking, travel, fashion..."
+                autocomplete="off">
+        </div>
+
+        <button id="generateBtn" class="generate-btn">Generate Hashtags</button>
+    </section>
+<!--Results Section (Should be hidden by default)-->
+    <section class="'results-setion" id="resultsSection">
+        <div class="results-header">
+            <h2>Your Hashtags</h2>
+            <button id="copyBtn" class="copy-btn">Copy All</button>
+        </div>
+
+        <div id="hashtagOutput" class="hashtag-output">
+            <!-- Generated hashtags will appear here -->
+        </div>
+
+        <p class="hashtag-count" id="hashtagCount"></p>
+    </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
