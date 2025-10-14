@@ -598,3 +598,105 @@ body {
         font-size: 1rem;
     }
 }
+
+/* ========================================
+   SHARE SECTION
+======================================== */
+.share-section {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 2.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.share-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.share-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.twitter-btn {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.twitter-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.linkedin-btn {
+    background: rgba(10, 102, 194, 0.6);
+    color: white;
+}
+
+.linkedin-btn:hover {
+    background: rgba(10, 102, 194, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(10, 102, 194, 0.3);
+}
+
+.facebook-btn {
+    background: rgba(24, 119, 242, 0.6);
+    color: white;
+}
+
+.facebook-btn:hover {
+    background: rgba(24, 119, 242, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+}
+
+/* Mobile Share Buttons */
+@media screen and (max-width: 768px) {
+    .share-section {
+        padding: 2rem 1rem;
+    }
+    
+    .share-text {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .share-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .share-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
