@@ -183,10 +183,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            
+            const hashtags = generateHashtags(niche);
 
+            displayHashtags(hashtags);
+        });
 
-        })
+        nicheInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                generateBtn.click();
+            }
+        });
     }
 
 })
