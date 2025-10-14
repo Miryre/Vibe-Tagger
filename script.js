@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const nicheInput = document.getElementById('nicheInput');
-    const generateBtn = document.getElementById('generationsBtn');
+    const generateBtn = document.getElementById('generateBtn');
     const resultsSection = document.getElementById('resultsSection');
     const hashtagOutput = document.getElementById('hashtagOutput');
+    const hashtagCount = document.getElementById('hashtagCount');
     const copyBtn = document.getElementById('copyBtn');
 
     const hashtagTemplates = [
@@ -97,8 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'StayPositive',
         'KeepGoing',
         'NeverGiveUp',
-        'YouGotThis',
-
+        'YouGotThis'
     ];
     
     const genericHashtags = [
@@ -130,69 +130,74 @@ document.addEventListener('DOMContentLoaded', function() {
         '#Inspiration',
         '#Selfie',
         '#Vibes',
-        '#Goals',
+        '#Goals'
     ];
 
     function generateHashtags(niche) {
-
         const cleanNiche = niche.toLowerCase().trim().replace(/\s+/g, '');
-
-        const capitalizezedNiche = cleanNiche.charAt(0).toUpperCase() + claenCiche.slice(1);
+        const capitalizedNiche = cleanNiche.charAt(0).toUpperCase() + cleanNiche.slice(1);
 
         let hashtags = [];
 
         hashtagTemplates.forEach(template => {
             if (template === '') {
-
-                hashtags.push(`#$capitalizedNiche`);
+                hashtags.push(`#${capitalizedNiche}`);
             } else if (template === 'Of' || template === 'Is') {
-
                 hashtags.push(`#${capitalizedNiche}${template}`);
             } else {
-
                 hashtags.push(`#${capitalizedNiche}${template}`);
             }
         });
 
         const shuffled = genericHashtags.sort(() => 0.5 - Math.random());
         const selectedGeneric = shuffled.slice(0, 5);
-        hashtags =hashtags.concat(selectedGeneric);
+        hashtags = hashtags.concat(selectedGeneric);
 
         return hashtags;
-
-        function displayHashtags(hashtags) {
-
-            const hashtagString = hashtags.join('');
-
-            hashtagOutput.textContent = hashtagString;
-
-            hashtagCount.textContent = `Generated ${hashtags.length} hashtags`;
-
-            resultsSection.classList.add('show');
-
-            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        generateBtn.addEventListener('click', function() {
-
-            const niche =nicheInput.value.trim();
-
-            if (niche ==='') {
-                alert('Please enter a niche or keyword first!');
-                nicheInput.focus();
-                return;
-            }
-
-            const hashtags = generateHashtags(niche);
-
-            displayHashtags(hashtags);
-        });
-
-        nicheInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                generateBtn.click();
-            }
-        });
     }
 
-})
+    function displayHashtags(hashtags) {
+        const hashtagString = hashtags.join(' ');
+        hashtagOutput.textContent = hashtagString;
+        hashtagCount.textContent = `Generated ${hashtags.length} hashtags`;
+        resultsSection.classList.add('show');
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    generateBtn.addEventListener('click', function() {
+        const niche = nicheInput.value.trim();
+
+        if (niche === '') {
+            alert('Please enter a niche or keyword first!');
+            nicheInput.focus();
+            return;
+        }
+
+        const hashtags = generateHashtags(niche);
+        displayHashtags(hashtags);
+    });
+
+    nicheInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            generateBtn.click();
+        }
+    });
+
+    copyBtn.addEventListener('click', function() {
+        const textToCopy = hashtagOutput.textContent;
+
+        navigator.clipboard.writeText(textToCopy).then(function() {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = '✓ Copied!';
+            copyBtn.style.background = 'rgba(76, 175, 80, 1)';
+            
+            setTimeout(function() {
+                copyBtn.textContent = originalText;
+                copyBtn.style.background = 'rgba(76, 175, 80, 0.6)';
+            }, 2000);
+        }).catch(function(err) {
+            alert('Failed to copy. Please select and copy manually.');
+        });
+    });
+    
+});
