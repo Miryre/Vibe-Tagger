@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe Tagger -</title>
+    <title>Vibe Tagger - Trending Social Media Hashtags</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!--Main Container-->
-    <div class="container">
- <!--Header Section-->       
-    <header class="header">
-        <h1>Welcome to Vibe Tagger</h1>
-        <p class="subtitle">Your go to app for trending social media tags</p>
-        <br>
-        <img src="https://picsum.photos/200" alt='A random image as a place holder' class="hero-image">
-    </header>
- <!--Input Section-->       
-    <section class="input-section">
-        <div class="input-group">
-            <label for="nicheInput">Enter Your Niche:</label>
-            <input
-                type="text"
-                id="nicheInput"
-                placeholder="eg., fitness, cooking, travel, fashion..."
-                autocomplete="off">
-        </div>
 
-        <button id="generateBtn" class="generate-btn">Generate Hashtags</button>
+    <!-- Hero Section (Full width with video) -->
+    <section class="hero">
+        <!-- Video element -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="videos/Vibe-Tagger-Header.mp4" type="video/mp4">
+            <source src="videos/Vibe-Tagger-Header.webm" type="video/webm">
+            Your browser does not support video playback.
+        </video>
+        
+        <!-- Overlay and content (inside hero, not container) -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Vibe Tagger</h1>
+            <p>Your go-to app for trending social media tags</p>
+        </div>
     </section>
-<!--Results Section (Should be hidden by default)-->
-    <section class="'results-setion" id="resultsSection">
-        <div class="results-header">
-            <h2>Your Hashtags</h2>
-            <button id="copyBtn" class="copy-btn">Copy All</button>
-        </div>
 
-        <div id="hashtagOutput" class="hashtag-output">
-            <!-- Generated hashtags will appear here -->
+    <!-- Header Section (Full width) -->
+    <section class="header-section">
+        <div class="header-content">
+            <h2>Generate Trending Hashtags Instantly</h2>
+            <p class="header-subtitle">Enter your niche and get dozens of optimized hashtags for Instagram, Twitter, TikTok, and more.</p>
         </div>
-
-        <p class="hashtag-count" id="hashtagCount"></p>
     </section>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+
+    <!-- Input Section (Full width with centered content) -->
+    <section class="input-section-full">
+        <div class="input-container">
+            <div class="input-group">
+                <label for="nicheInput">Enter Your Niche:</label>
+                <input
+                    type="text"
+                    id="nicheInput"
+                    placeholder="e.g., fitness, cooking, travel, fashion..."
+                    autocomplete="off">
+            </div>
+
+            <button id="generateBtn" class="generate-btn">Generate Hashtags</button>
+        </div>
+    </sectio
