@@ -96,7 +96,7 @@ body {
 ======================================== */
 .header-section {
     width: 100%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    background: radial-gradient(circle at center, rgba(255, 149, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
     padding: 5rem 2rem;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -192,12 +192,12 @@ body {
     font-size: 1.3rem;
     font-weight: bold;
     color: white;
-    background: rgba(184, 42, 168, 0.8);
+    background: rgba(212, 116, 0, 0.8);
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(184, 42, 168, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
