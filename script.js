@@ -132,4 +132,61 @@ document.addEventListener('DOMContentLoaded', function() {
         '#Vibes',
         '#Goals',
     ];
+
+    function generateHashtags(niche) {
+
+        const cleanNiche = niche.toLowerCase().trim().replace(/\s+/g, '');
+
+        const capitalizezedNiche = cleanNiche.charAt(0).toUpperCase() + claenCiche.slice(1);
+
+        let hashtags = [];
+
+        hashtagTemplates.forEach(template => {
+            if (template === '') {
+
+                hashtags.push(`#$capitalizedNiche`);
+            } else if (template === 'Of' || template === 'Is') {
+
+                hashtags.push(`#${capitalizedNiche}${template}`);
+            } else {
+
+                hashtags.push(`#${capitalizedNiche}${template}`);
+            }
+        });
+
+        const shuffled = genericHashtags.sort(() => 0.5 - Math.random());
+        const selectedGeneric = shuffled.slice(0, 5);
+        hashtags =hashtags.concat(selectedGeneric);
+
+        return hashtags;
+
+        function displayHashtags(hashtags) {
+
+            const hashtagString = hashtags.join('');
+
+            hashtagOutput.textContent = hashtagString;
+
+            hashtagCount.textContent = `Generated ${hashtags.length} hashtags`;
+
+            resultsSection.classList.add('show');
+
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        generateBtn.addEventListener('click', function() {
+
+            const niche =nicheInput.value.trim();
+
+            if (niche ==='') {
+                alert('Please enter a niche or keyword first!');
+                nicheInput.focus();
+                return;
+            }
+
+            
+
+
+        })
+    }
+
 })
