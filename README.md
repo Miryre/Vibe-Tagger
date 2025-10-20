@@ -36,7 +36,7 @@ It’s part of my **full-stack development portfolio**, focused on tools that bl
 
 ## 🔗 Live Demo
 
-👉 [Try Vibe Tagger on GitHub Pages](https://yourusername.github.io/vibe-tagger/)
+👉 [Try Vibe Tagger on GitHub Pages](https://miryre.github.io/Vibe-Tagger/)
 
 ---
 
