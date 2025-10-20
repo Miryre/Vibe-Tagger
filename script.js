@@ -7,131 +7,111 @@ document.addEventListener('DOMContentLoaded', function() {
     const hashtagCount = document.getElementById('hashtagCount');
     const copyBtn = document.getElementById('copyBtn');
 
-    const hashtagTemplates = [
-        '',
-        'Daily',
-        'Life',
-        'Gram',
-        'Lover',
-        'Addict',
-        'Inspo',
-        'Vibes',
-        'Goals',
-        'Community',
-        'Tribe',
-        'Culture',
-        'Style',
-        'Fashion',
-        'Blogger',
-        'Influencer',
-        'Photography',
-        'Travel',
-        'Foodie',
-        'Fitness',
-        'Wellness',
-        'Motivation',
-        'Entrepreneur',
-        'Success',
-        'Mindset',
-        'Hustle',
-        'Journey',
-        'Adventure',
-        'Dream',
-        'Passion',
-        'Creative',
-        'Inspiration',
-        'Explore',
-        'Discover',
-        'Wanderlust',
-        'Nature',
-        'Beauty',
-        'Art',
-        'Design',
-        'Music',
-        'Tech',
-        'Innovation',
-        'Startup',
-        'Business',
-        'Marketing',
-        'SocialMedia',
-        'ContentCreator',
-        'DigitalNomad',
-        'RemoteWork',
-        'Lifestyle',
-        'Wellbeing',
-        'SelfCare',
-        'Mindfulness',
-        'Growth',
-        'Learning',
-        'Education',
-        'Skills',
-        'Knowledge',
-        'SuccessMindset',
-        'GoalSetting',
-        'Productivity',
-        'Focus',
-        'TimeManagement',
-        'Leadership',
-        'Teamwork',
-        'Collaboration',
-        'Networking',
-        'CommunityBuilding',
-        'Support',
-        'Empowerment',
-        'Positivity',
-        'Gratitude',
-        'Happiness',
-        'Love',
-        'Peace',
-        'Joy',
-        'Friendship',
-        'Family',
-        'Memories',
-        'Moments',
-        'Experience',
-        'Story',
-        'JourneyOfLife',
-        'LivingMyBestLife',
-        'ChasingDreams',
-        'MakingItHappen',
-        'BelieveInYourself',
-        'StayPositive',
-        'KeepGoing',
-        'NeverGiveUp',
-        'YouGotThis'
-    ];
+    const hashtagTemplates = {
+        prefixes: [
+            'Daily', 'My', 'The', 'Best', 'Love', 'Explore', 'Discover',
+            'Pro', 'Real', 'True', 'Ultimate', 'Epic', 'Amazing', 'Awesome'
+        ],
+        suffixes: [
+            'Life', 'Gram', 'Lover', 'Addict', 'Inspo', 'Vibes', 'Goals',
+            'Community', 'Tribe', 'Culture', 'Style', 'Fashion', 'Blogger',
+            'Influencer', 'Photography', 'Travel', 'Journey', 'Adventure',
+            'Daily', 'Passion', 'Motivation', 'Inspiration', 'Stories',
+            'Moments', 'Memories', 'Experience', 'World', 'Hub', 'Central',
+            'Nation', 'Squad', 'Crew', 'Gang', 'Fam', 'Scene', 'Movement'
+        ],
+        actionWords: [
+            'Love', 'Explore', 'Discover', 'Create', 'Build', 'Make',
+            'Share', 'Inspire', 'Motivate', 'Achieve', 'Succeed', 'Dream'
+        ],
+        descriptors: [
+            'Awesome', 'Amazing', 'Epic', 'Best', 'Top', 'Cool', 'Hot',
+            'Trending', 'Viral', 'Popular', 'Famous', 'Elite', 'Pro'
+        ]
+    };
     
     const genericHashtags = [
-        '#InstaGood',
-        '#PhotoOfTheDay',
-        '#Love',
-        '#Beautiful',
-        '#Happy',
-        '#Cute',
-        '#TBT',
-        '#Fashion',
-        '#FollowMe',
-        '#Picoftheday',
-        '#Instadaily',
-        '#Summer',
-        '#Art',
-        '#Nature',
-        '#Repost',
-        '#Style',
-        '#Travel',
-        '#Fitness',
-        '#Food',
-        '#Family',
-        '#Friends',
-        '#Fun',
-        '#Life',
-        '#Music',
-        '#Motivation',
-        '#Inspiration',
-        '#Selfie',
-        '#Vibes',
-        '#Goals'
+        '#InstaGood', '#PhotoOfTheDay', '#Love', '#Beautiful', '#Happy',
+        '#Cute', '#Fashion', '#FollowMe', '#Picoftheday', '#Instadaily',
+        '#Art', '#Nature', '#Repost', '#Style', '#Travel', '#Fitness',
+        '#Food', '#Fun', '#Life', '#Music', '#Motivation', '#Inspiration',
+        '#Selfie', '#Vibes', '#Goals', '#Blessed', '#Grateful', '#ThankYou',
+        '#FollowForFollow', '#LikeForLike', '#InstaLike', '#InstaFollow',
+        '#Trending', '#Viral', '#Explore', '#Discover', '#Share', '#Create'
     ];
+    
+    const categoryHashtags = {
+        fitness: [
+            '#GymLife', '#WorkoutMotivation', '#FitnessJourney', '#HealthyLifestyle',
+            '#FitFam', '#GymMotivation', '#GetFit', '#TrainHard', '#NoPainNoGain',
+            '#FitnessGoals', '#BodyBuilding', '#Cardio', '#Strength', '#Wellness'
+        ],
+        food: [
+            '#Foodie', '#FoodPorn', '#Yummy', '#Delicious', '#FoodPhotography',
+            '#InstaFood', '#FoodLover', '#Cooking', '#Homemade', '#Recipe',
+            '#Tasty', '#FoodBlogger', '#Chef', '#Eats', '#Foodgasm'
+        ],
+        travel: [
+            '#Wanderlust', '#TravelGram', '#Explore', '#Adventure', '#Vacation',
+            '#TravelPhotography', '#TravelBlogger', '#WorldTraveler', '#PassportReady',
+            '#Traveling', '#TravelLife', '#ExploreMore', '#TravelAddict', '#Roam'
+        ],
+        fashion: [
+            '#OOTD', '#StyleInspo', '#FashionBlogger', '#StreetStyle', '#FashionWeek',
+            '#Trendy', '#Outfit', '#FashionGram', '#StyleBlogger', '#FashionAddict',
+            '#Chic', '#LookBook', '#WhatIWore', '#FashionDaily', '#Fashionista'
+        ],
+        beauty: [
+            '#MakeupLover', '#BeautyBlogger', '#Skincare', '#MakeupArtist', '#BeautyTips',
+            '#GlowUp', '#SelfCare', '#BeautyRoutine', '#MakeupJunkie', '#BeautyGram',
+            '#Cosmetics', '#BeautyInfluencer', '#MakeupLook', '#NaturalBeauty'
+        ],
+        business: [
+            '#Entrepreneur', '#Success', '#BusinessOwner', '#Startup', '#Hustle',
+            '#Grind', '#BossLife', '#Mindset', '#Leadership', '#Marketing',
+            '#BusinessTips', '#SmallBusiness', '#WorkHard', '#Motivated', '#CEO'
+        ],
+        tech: [
+            '#Technology', '#Innovation', '#TechNews', '#Gadgets', '#Developer',
+            '#Coding', '#Programming', '#Software', '#TechLife', '#Digital',
+            '#AI', '#FutureTech', '#TechTrends', '#Geek', '#TechCommunity'
+        ],
+        art: [
+            '#Artist', '#ArtWork', '#Creative', '#InstaArt', '#ArtOfTheDay',
+            '#Draw', '#Painting', '#Sketch', '#Design', '#ArtLovers',
+            '#ContemporaryArt', '#ArtGallery', '#ArtCommunity', '#ArtInspiration'
+        ]
+    };
+
+    function detectCategory(niche) {
+        const lowerNiche = niche.toLowerCase();
+        const keywords = {
+            fitness: ['fitness', 'gym', 'workout', 'exercise', 'health', 'training', 'bodybuilding'],
+            food: ['food', 'cooking', 'recipe', 'chef', 'baking', 'cuisine', 'meal'],
+            travel: ['travel', 'trip', 'vacation', 'wanderlust', 'adventure', 'explore', 'tourism'],
+            fashion: ['fashion', 'style', 'outfit', 'clothing', 'ootd', 'trend', 'wardrobe'],
+            beauty: ['beauty', 'makeup', 'skincare', 'cosmetic', 'hair', 'nails'],
+            business: ['business', 'entrepreneur', 'startup', 'marketing', 'sales', 'company'],
+            tech: ['tech', 'technology', 'coding', 'software', 'developer', 'programming', 'app'],
+            art: ['art', 'artist', 'painting', 'drawing', 'creative', 'design', 'illustration']
+        };
+
+        for (let category in keywords) {
+            if (keywords[category].some(keyword => lowerNiche.includes(keyword))) {
+                return category;
+            }
+        }
+        return null;
+    }
+
+    function shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
 
     function generateHashtags(niche) {
         const cleanNiche = niche.toLowerCase().trim().replace(/\s+/g, '');
@@ -139,21 +119,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let hashtags = [];
 
-        hashtagTemplates.forEach(template => {
-            if (template === '') {
-                hashtags.push(`#${capitalizedNiche}`);
-            } else if (template === 'Of' || template === 'Is') {
-                hashtags.push(`#${capitalizedNiche}${template}`);
-            } else {
-                hashtags.push(`#${capitalizedNiche}${template}`);
-            }
+        hashtags.push(`#${capitalizedNiche}`);
+
+        const shuffledPrefixes = shuffleArray(hashtagTemplates.prefixes);
+        const selectedPrefixes = shuffledPrefixes.slice(0, Math.floor(Math.random() * 3) + 8);
+        selectedPrefixes.forEach(prefix => {
+            hashtags.push(`#${prefix}${capitalizedNiche}`);
         });
 
-        const shuffled = genericHashtags.sort(() => 0.5 - Math.random());
-        const selectedGeneric = shuffled.slice(0, 5);
+        const shuffledSuffixes = shuffleArray(hashtagTemplates.suffixes);
+        const selectedSuffixes = shuffledSuffixes.slice(0, Math.floor(Math.random() * 6) + 15);
+        selectedSuffixes.forEach(suffix => {
+            hashtags.push(`#${capitalizedNiche}${suffix}`);
+        });
+
+        const shuffledActions = shuffleArray(hashtagTemplates.actionWords);
+        const selectedActions = shuffledActions.slice(0, Math.floor(Math.random() * 3) + 5);
+        selectedActions.forEach(action => {
+            hashtags.push(`#${action}${capitalizedNiche}`);
+        });
+
+        const shuffledDescriptors = shuffleArray(hashtagTemplates.descriptors);
+        const selectedDescriptors = shuffledDescriptors.slice(0, Math.floor(Math.random() * 3) + 5);
+        selectedDescriptors.forEach(descriptor => {
+            hashtags.push(`#${descriptor}${capitalizedNiche}`);
+        });
+
+        const category = detectCategory(niche);
+        if (category && categoryHashtags[category]) {
+            const shuffledCategory = shuffleArray(categoryHashtags[category]);
+            const selectedCategory = shuffledCategory.slice(0, Math.floor(Math.random() * 5) + 10);
+            hashtags = hashtags.concat(selectedCategory);
+        }
+
+        const shuffledGeneric = shuffleArray(genericHashtags);
+        const selectedGeneric = shuffledGeneric.slice(0, Math.floor(Math.random() * 6) + 15);
         hashtags = hashtags.concat(selectedGeneric);
 
-        return hashtags;
+        hashtags = shuffleArray(hashtags);
+
+        const finalCount = Math.floor(Math.random() * 21) + 60; // Random between 60-80
+        return hashtags.slice(0, finalCount);
     }
 
     function displayHashtags(hashtags) {
@@ -201,3 +207,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+
