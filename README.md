@@ -1,33 +1,53 @@
-#🎧 Vibe Tagger
-#A modern, niche-aware hashtag generator built for content creators who want smarter, faster, and more relevant tags.
+# 🎧 Vibe Tagger  
+A modern, niche-aware hashtag generator built for content creators who want smarter, faster, and more relevant tags.
 
-#🚀 Features
-#Generate hashtags instantly — tailored by niche or keyword
-#Clean, minimalist design — built for speed and usability
-#Fully mobile-responsive — optimized for any device
-#Copy-to-clipboard — quick export for your captions (coming soon)
+---
 
-#🛠️ Tech Stack
-#HTML5 – structure and semantic layout
-#CSS3 – responsive styling and clean UI design
-#JavaScript – dynamic functionality (in progress)
+## 🚀 Features
 
-#📈 Project Status
-#🧩 In active development
-#The JavaScript engine for real-time hashtag generation is currently being integrated.
+- Generate hashtags instantly — tailored by niche or keyword  
+- Clean, minimalist design — built for speed and usability  
+- Fully mobile-responsive — optimized for any device  
+- Copy-to-clipboard — quick export for your captions *(coming soon)*  
 
-#💡 About the Project
-#Vibe Tagger was designed and built by Elizabeth Reynolds to make hashtag discovery faster and more intentional for creators.
-#It’s part of my growing full-stack development portfolio, focused on tools that blend design intuition with technical execution.
+---
 
-#🔗 Live Demo
-#🚀 Coming Soon!
-#Check back for the deployed version once the JS logic is complete.
+## 🛠️ Tech Stack
 
-#📫 Contact
-#Portfolio: thevanilladeveloper.com (coming soon)
-#Email: thevanilladeveloper@gmail.com
-#LinkedIn: Elizabeth Reynolds
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
-🗣️ Feedback Welcome
-Got ideas for features or improvements? Open an issue or start a discussion — I’d love to hear your thoughts.
+---
+
+## 📈 Project Status
+
+🧩 **Complete and live!**  
+The JavaScript logic is fully functional and deployed via GitHub Pages.
+
+---
+
+## 💡 About the Project
+
+Vibe Tagger was designed and built by **Elizabeth Reynolds** to make hashtag discovery faster and more intentional for creators.  
+It’s part of my **full-stack development portfolio**, focused on tools that blend design intuition with technical execution.
+
+---
+
+## 🔗 Live Demo
+
+👉 [Try Vibe Tagger on GitHub Pages](https://yourusername.github.io/vibe-tagger/)
+
+---
+
+## 📫 Contact
+
+- **Portfolio:** [thevanilladeveloper.com](#) *(coming soon)*  
+- **Email:** [thevanilladeveloper@icloud.com](mailto:thevanilladeveloper@icloud.com)  
+- **LinkedIn:** [Elizabeth Reynolds](https://www.linkedin.com/in/elizabethdreynolds/)
+
+---
+
+## 🗣️ Feedback Welcome
+
+Got ideas for features or improvements? Open an [issue](../../issues) or start a discussion — I’d love to hear your thoughts.
