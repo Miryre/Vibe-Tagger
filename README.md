@@ -14,8 +14,8 @@ A modern, niche-aware hashtag generator built for content creators who want smar
 
 ## 🛠️ Tech Stack
 
-- **HTML5**
-- **CSS3**
+- **HTML5**  
+- **CSS3**  
 - **JavaScript**
 
 ---
