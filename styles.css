@@ -498,7 +498,6 @@ body {
 
 .footer-content {
     display: grid;
-  /* 4 columns on wide screens; auto-wrap below this width */
     grid-template-columns: repeat(4, minmax(200px, 1fr));
     align-items: start;
     gap: 4rem;
@@ -519,7 +518,6 @@ body {
 
 .footer-links {
     display: contents;
-  /* remove grid from the wrapper so it doesn't create a nested grid */
 }
 
 .footer-column h4 {
@@ -730,6 +728,7 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
     }
     
     .footer-brand {
@@ -745,11 +744,6 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-    }
-
-    .footer-content {
-        text-align: center;
-      /* I think you likely just forgot about this section as it was the only un-centered one */
     }
     
     .footer-bottom {
@@ -1009,5 +1003,168 @@ body {
     
     .step-card h3 {
         font-size: 1.2rem;
+    }
+}
+
+/* ========================================
+   BEHIND THE SCENES - ALGORITHM EXPLANATION
+======================================== */
+
+/* MAIN CONTAINER */
+.behind-scenes {
+    margin-top: 100px;
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* SECTION HEADING */
+.behind-scenes h3 {
+    font-size: 2rem;
+    color: #ffeb3b;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(255, 235, 59, 0.3);
+}
+
+/* INTRO PARAGRAPH */
+.behind-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* GRID OF ALGORITHM CARDS - Now 2x2 for perfect balance */
+.algorithm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* INDIVIDUAL ALGORITHM CARDS */
+.algorithm-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.algorithm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 235, 59, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 235, 59, 0.4);
+}
+
+/* EMOJI ICONS IN CARDS */
+.algorithm-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* CARD HEADINGS */
+.algorithm-card h4 {
+    font-size: 1.3rem;
+    color: #ffeb3b;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* CARD DESCRIPTIONS */
+.algorithm-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* EXAMPLE BOX - Fixed border order */
+.algorithm-example {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 4px solid #ff9800;
+}
+
+/* EXAMPLE HEADING */
+.algorithm-example h4 {
+    font-size: 1.4rem;
+    color: #ffeb3b;
+    margin-bottom: 20px;
+}
+
+/* EXAMPLE BREAKDOWN CONTAINER */
+.example-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* INDIVIDUAL EXAMPLE ITEMS */
+.example-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* EXAMPLE LABELS (e.g., "Niche Tags:") */
+.example-item strong {
+    color: white;
+    font-size: 1.05rem;
+}
+
+/* EXAMPLE HASHTAGS */
+.example-item span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    padding: 10px;
+    background: rgba(255, 149, 0, 0.15);
+    border-radius: 8px;
+    font-style: italic;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+}
+
+/* ========================================
+   MOBILE RESPONSIVE - BEHIND THE SCENES
+======================================== */
+@media (max-width: 768px) {
+    .behind-scenes {
+        padding: 40px 25px;
+        margin-top: 60px;
+    }
+
+    .behind-scenes h3 {
+        font-size: 1.5rem;
+    }
+
+    .algorithm-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .algorithm-example {
+        padding: 20px;
     }
 }
