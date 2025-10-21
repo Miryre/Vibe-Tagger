@@ -498,7 +498,9 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+  /* 4 columns on wide screens; auto-wrap below this width */
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    align-items: start;
     gap: 4rem;
     margin-bottom: 3rem;
 }
@@ -516,9 +518,8 @@ body {
 }
 
 .footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: contents;
+  /* remove grid from the wrapper so it doesn't create a nested grid */
 }
 
 .footer-column h4 {
@@ -744,6 +745,11 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+    }
+
+    .footer-content {
+        text-align: center;
+      /* I think you likely just forgot about this section as it was the only un-centered one */
     }
     
     .footer-bottom {
