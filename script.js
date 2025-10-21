@@ -7,6 +7,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const hashtagCount = document.getElementById('hashtagCount');
     const copyBtn = document.getElementById('copyBtn');
 
+    // ========================================
+    // SIMPLE COUNTER - PHASE 1
+    // ========================================
+    
+    // Initialize counter from localStorage
+    function getGenerationCount() {
+        return parseInt(localStorage.getItem('vibeTaggerGenerations')) || 0;
+    }
+
+    function incrementCounter() {
+        let count = getGenerationCount();
+        count++;
+        localStorage.setItem('vibeTaggerGenerations', count);
+        updateCounterDisplay();
+        return count;
+    }
+
+    function updateCounterDisplay() {
+        const counterElement = document.getElementById('generationCounter');
+        if (counterElement) {
+            const count = getGenerationCount();
+            counterElement.textContent = count.toLocaleString(); // Adds commas (1,234)
+        }
+    }
+
+    // Display counter on page load
+    updateCounterDisplay();
+
+    // Log to console 
+    console.log(`Total generations so far: ${getGenerationCount()}`);
+
+    // ========================================
+    //  HASHTAG GENERATION CODE
+    // ========================================
+
     const hashtagTemplates = {
         prefixes: [
             'Daily', 'My', 'The', 'Best', 'Love', 'Explore', 'Discover',
@@ -158,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         hashtags = shuffleArray(hashtags);
 
-        const finalCount = Math.floor(Math.random() * 21) + 60; // Random between 60-80
+        const finalCount = Math.floor(Math.random() * 21) + 60;
         return hashtags.slice(0, finalCount);
     }
 
@@ -181,6 +216,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const hashtags = generateHashtags(niche);
         displayHashtags(hashtags);
+
+        // ===================
+        // INCREMENT COUNTER 
+        // ====================
+        const currentCount = incrementCounter();
+        console.log(`Generation #${currentCount} - Niche: "${niche}"`);
     });
 
     nicheInput.addEventListener('keypress', function(event) {
@@ -207,4 +248,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+
+// ========================================
+// Check stats anytime
+// ========================================
+// Open browser console (F12) and type: checkStats()
+
+function checkStats() {
+    const count = parseInt(localStorage.getItem('vibeTaggerGenerations')) || 0;
+    console.log(`
+    ╔════════════════════════════════════╗
+    ║   VIBE TAGGER STATISTICS           ║
+    ╠════════════════════════════════════╣
+    ║   Total Generations: ${count.toLocaleString().padStart(14)} ║
+    ╚════════════════════════════════════╝
+    `);
+    return count;
+}
 

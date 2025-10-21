@@ -1168,3 +1168,36 @@ body {
         padding: 20px;
     }
 }
+
+.stats-banner {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-item strong {
+    color: #ffeb3b;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .stats-banner {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-item {
+        font-size: 1rem;
+    }
+    
+    .stat-item strong {
+        font-size: 1.3rem;
+    }
+}
